@@ -136,7 +136,7 @@ struct mvAppItemConfig
 struct mvAppItemDrawInfo
 {
     mvMat4 transform         = mvIdentityMat4();
-    mvMat4 appliedTransform  = mvIdentityMat4(); // only used by nodes
+    std::vector<mvMat4> appliedTransforms  = {}; // only used by nodes
     long   cullMode          = 0; // mvCullMode_None
     bool   perspectiveDivide = false;
     bool   depthClipping     = false;

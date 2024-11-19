@@ -587,7 +587,7 @@ apply_transform(PyObject* self, PyObject* args, PyObject* kwargs)
 	if (aitem->type == mvAppItemType::mvDrawNode)
 	{
 		mvDrawNode* graph = static_cast<mvDrawNode*>(aitem);
-		graph->drawInfo->appliedTransform = atransform->m;
+		graph->drawInfo->appliedTransforms.push_back(atransform->m);
 	}
 
 	else

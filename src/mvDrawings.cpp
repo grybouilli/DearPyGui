@@ -1002,7 +1002,10 @@ void mvDrawNode::draw(ImDrawList* drawlist, float x, float y)
 		if (!item->config.show)
 			continue;
 
-		item->drawInfo->transform = drawInfo->transform * drawInfo->appliedTransform;
+		for(const auto& appliedTransform : drawInfo->appliedTransforms)
+		{
+			item->drawInfo->transform *= appliedTransform;
+		}
 
 		item->drawInfo->perspectiveDivide = drawInfo->perspectiveDivide;
 		item->drawInfo->depthClipping = drawInfo->depthClipping;
